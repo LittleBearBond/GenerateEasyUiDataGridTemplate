@@ -1,0 +1,53 @@
+﻿ 
+<!DOCTYPE html>  @*使用这个出现了滚动条*@
+@*<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">*@
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - 翻转课堂测试</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render(
+            "~/Scripts/EasyUI/themes/bootstrap/css",
+            "~/Scripts/EasyUI/themes/iconcss",
+            "~/Content/mycss"
+            //"~/Scripts/JqueryUi/themes/redmond/css"
+            )
+        @RenderSection("styles", false)
+    </head>
+    <body class="easyui-layout" id="body">
+        <!--信息编辑栏-->
+        @*<div data-options="region:'north',border:false" style="display: none">
+            <div id="EditInfo">
+                @RenderSection("editinfo", required: false)
+            </div>
+        </div>*@
+        <!--搜索-->
+        <div data-options="region:'center',border:false,fit:true">
+            <div id="Search">
+                <form id="SearchForm">
+                    @RenderSection("searchs", false)
+                </form>
+            </div>
+            @RenderBody()
+        </div>
+        <!--弹出 Window-->
+        <div id="myWindow"></div>
+        @Scripts.Render("~/bundles/base",
+            //"~/bundles/modernizr",
+            "~/bundles/jquerytools"
+            //"~/Scripts/artDialog/js",
+            //"~/Scripts/JqueryUi/ui/js"
+            )
+        <script src="@Url.Content("~/Scripts/EasyUI/jquery.easyui.min.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/EasyUI/locale/easyui-lang-zh_cn.js")" type="text/javascript"> </script>
+     @Scripts.Render("~/bundles/mycomjs","~/bundles/myJs")
+        <script type="text/javascript">
+            $(function() {
+                WebJs.EasyUiExtend.extendEasyUi();
+            });
+        </script>
+        @RenderSection("scripts", false)
+    </body>
+</html>

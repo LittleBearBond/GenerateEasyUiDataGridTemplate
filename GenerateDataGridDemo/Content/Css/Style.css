@@ -1,0 +1,188 @@
+﻿@charset "utf-8";
+ a{ text-decoration: none;}
+/*文字排版*/ 
+.f12{font-size:12px} 
+.f13{font-size:13px} 
+.f14{font-size:14px} 
+.f16{font-size:16px} 
+.f20{font-size:20px} 
+.fb{font-weight:bold} 
+.fn{font-weight:normal} 
+.t2{text-indent:2em} 
+.lh150{line-height:150%} 
+.lh180{line-height:180%} 
+.lh200{line-height:200%} 
+.unl{text-decoration:underline;} 
+.no_unl{text-decoration:none;} 
+ 
+/*定位*/ 
+.tl{text-align:left} 
+.tc{text-align:center} 
+.tr{text-align:right} 
+.bc{margin-left:auto;margin-right:auto;} 
+.fl{float:left;display:inline} 
+.fr{float:right;display:inline} 
+.cb{clear:both} 
+.cl{clear:left} 
+.cr{clear:right} 
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-block}* html .clearfix{height:1%}.clearfix{display:block} 
+.zoom{zoom:1}  
+.hidden{visibility:hidden}   
+.none{display:none} 
+/*边距*/ 
+.m10{margin:10px} 
+.m15{margin:15px} 
+.m30{margin:30px} 
+.mt5{margin-top:5px} 
+.mt10{margin-top:10px} 
+.mt15{margin-top:15px} 
+.mt20{margin-top:20px} 
+.mt30{margin-top:30px} 
+.mt50{margin-top:50px} 
+.mt100{margin-top:100px} 
+body {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+/******My Clss**************/
+/*.logo {
+    width: 280px;
+    float: left;
+}*/
+
+.headerlog {
+    height: 60px;
+    background-color: #0081c2;
+     color: #fff;
+}
+.noscript {position:absolute;z-index:100000;height:2046px;top:0;left:0;width:100%;background:white;text-align:center;}
+.head a{color:White;text-decoration:underline;}
+.head-north {overflow: hidden; height: 66px; line-height: 66px; background: #2076C3 url(/Content/images/headbg.png) repeat-x;color: #fff; font-family: Verdana, 微软雅黑,黑体}
+.head-south {height: 30px; background: #D2E0F2;}
+.head-north-left {
+    background:url(/Content/images/logo/logo.png) no-repeat left;
+    -ms-background-size: 70%;
+    background-size: 70%;margin-left:10px; width:260px; height:64px;float:left; padding-left:70px; /*font-size:30px; font-weight:bolder; font-family:'Microsoft YaHei' !important;*/
+}
+.head-north-right{float:right; padding-right:10px;}
+.head-north-right a{color:white;}
+.head-north-right b{font-size:12px; font-family:Verdana,宋体,Tahoma;}
+.accordion ul{list-style-type:none;margin:0; padding:10px;}
+.accordion ul li{ padding:0;margin-left:0;}
+.accordion ul li a{line-height:24px; cursor:pointer;color: black}
+.accordion ul li div{margin:2px 0;padding-left:10px;padding-top:2px; border:1px solid #fff;}
+.accordion ul li div.hover{border:1px dashed #D69C00; background:#FFE88C;cursor:pointer;}
+.accordion ul li div.hover a{color:#D16C00; text-decoration:none;}
+.accordion ul li div.selected{border:1px solid #D69C00; background:#FFE88C;cursor:default;}
+a.accordion ul li div.selected a{color:#D16C00; font-weight:bold;}
+.icon{padding-left:18px;display:inline-block; line-height:18px;}
+/*
+.fontlogo {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 56px;
+    margin-left: 20px;
+}
+
+.headeruserinfo {
+    float: right;
+    line-height: 56px;
+}
+.headeruserinfo  ul {
+    margin-right: 35px;
+
+}
+.headeruserinfo  ul li {
+    line-height: 25px;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+}
+.headeruserinfo ul li a{
+    color: #ffffff;
+}
+.headeruserinfo>div {
+    height: 25px;
+    margin-top: 3px;
+}
+.nav_menu ul li{
+    line-height: 20px;
+    padding: 2px;
+    padding-left: 5px;
+    margin: auto 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.nav_menu ul li a{
+    font-size: 13px;
+    cursor: pointer;
+}
+.nav_current {
+    background-color: #0081c2;
+}
+.nav_current a{
+    font-weight: bold;
+     color: #fff;
+}*/
+
+/*#Search {
+    height:30px;
+    padding-top: 5px;
+}*/
+#Search input,#Search button,#Search select{
+    height: 20px;
+    line-height: 20px;
+    *line-height: 20px;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}

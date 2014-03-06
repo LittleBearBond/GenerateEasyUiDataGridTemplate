@@ -1,0 +1,48 @@
+﻿@using GenerateDataGridDemo.EasyUi
+@using GenerateDataGridDemo.Extends
+@using GenerateDataGridDemo.Models
+@{
+    ViewBag.Title = "Test2";
+    Layout = "~/Views/Shared/_EasyUiLayout.cshtml";
+    var loadUrl = Url.Action("LoadTest1", "Home");
+}
+@section searchs
+{
+    <div>
+        @EasyUiPageControls.SearchTimeInput()
+        @EasyUiPageControls.SearchKeyWordInput("产品名称：", "KeyWord", "init=\"请输入产品名称\"")
+        @EasyUiPageControls.SearchButton()
+        <a class="easyui-linkbutton" id="GetAll">获取选择的ID</a>
+    </div>
+}
+@{
+    var end = EasyUiPageHtml.FormateOperate();
+    var start = EasyUiPageHtml.FirstCheckBox();
+}
+@Html.CreateDataGridTemplate(typeof(Product), end, start)
+@section scripts{
+    <script type="text/javascript">
+        function formatOperate(val, row) {
+            return '<a href="###" onclick="Modify(' + row.Id + ',\'' + row.Name + '\')">编辑</a>  ';
+        }
+        function Modify(id, name) {
+            WebJs.Dialog.Alert(utils.str.formatString('Id:{0},Name{1}', id, name));
+        }
+        $(function () {
+            easyui.dg.LoadData('@loadUrl');
+            WebJs.SearchCreateTime();
+            $('#searchLoadList').click(function () {
+                easyui.dg.Search('@loadUrl');
+            });
+            $('#GetAll').on('click', function () {
+                var ids = easyui.dg.GetSelectionIds();
+                if (utils.str.isNullOrWhiteSpace(ids)) {
+                    WebJs.Dialog.Tip('请先选择！');
+                    return;
+                }
+                WebJs.Dialog.Content(ids);
+            });
+        });
+    </script>
+}
+

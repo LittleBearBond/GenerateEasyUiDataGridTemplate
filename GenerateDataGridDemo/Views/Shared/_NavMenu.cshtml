@@ -1,0 +1,26 @@
+﻿@using GenerateDataGridDemo.EasyUi
+
+<div data-options="region:'west',split:true,title:'导航栏'" style="width: 210px;">
+    <div data-options="fit:true,border:false" id="aa" class="easyui-accordion">
+        <div title="Test1" data-options="@IconCls.Ok">
+            <ul>
+                <li>
+                    <div>
+                        <a href="javascript:void(0)" hrefval="@Url.Action("Test1","Home")" title="Test1">
+                            <span class="icon icon-ok">&nbsp;</span>
+                            <span>==Test1==</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="javascript:void(0)" hrefval="@Url.Action("Test2","Home")" title="Test2">
+                            <span class="icon icon-ok">&nbsp;</span>
+                            <span>==Test2==</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

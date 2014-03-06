@@ -1,0 +1,29 @@
+﻿@using GenerateDataGridDemo.EasyUi
+@using GenerateDataGridDemo.Extends
+@using GenerateDataGridDemo.Models
+@{
+    ViewBag.Title = "Test1";
+    Layout = "~/Views/Shared/_EasyUiLayout.cshtml";
+    var loadUrl = Url.Action("LoadTest1", "Home");
+}
+@section searchs
+{
+    <div>
+        @EasyUiPageControls.SearchTimeInput()
+        @EasyUiPageControls.SearchKeyWordInput("产品名称：", "KeyWord", "init=\"请输入产品名称\"")
+        @EasyUiPageControls.SearchButton()
+    </div>
+}
+@Html.CreateDataGridTemplate(typeof(Product))
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            easyui.dg.LoadData('@loadUrl');
+            WebJs.SearchCreateTime();
+            $('#searchLoadList').click(function () {
+                easyui.dg.Search('@loadUrl');
+            });
+        });
+    </script>
+}
+
